@@ -1,0 +1,316 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="row state-overview">
+    <div class="col-lg-4 col-sm-6">
+        <section class="panel">
+            <div class="symbol terques">
+                <i class="fa fa-bullseye" aria-hidden="true"></i>
+            </div>
+            <div class="value">
+                <a href="">
+                    <p>Preços:</p>
+                    <h1>
+                        90%
+                    </h1>
+                    <p>Sugerido x Praticado</p>
+                </a>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-7">
+        <section class="panel">
+            <div class="panel-body progress-panel">
+                <div class="task-progress">
+                    <h1>Mapa de Disponibilidade</h1>
+                    <p>Todo o Brasil</p>
+                </div>
+                <div class="task-option">
+                    <select class="styled">
+                        <option>Todo o Brasil</option>
+                        <option>Tom Crouse</option>
+                        <option>Jhon Due</option>
+                    </select>
+                </div>
+            </div>
+            <table class="table table-hover personal-task">
+                <tr>
+                    <th>Região</th>
+                    <th>Disponibilidade</th>
+                    <th>Mix Produtos</th>
+                    <th>Sobreposição</th>
+
+                </tr>
+                <tbody>
+                    <tr>
+
+                        <td>
+                            Nordeste
+                        </td>
+                        <td>
+                            1200
+                        </td>
+
+                        <td>
+                            800
+                        </td>
+                        <td>
+                            600
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td>
+                            Norte
+                        </td>
+                        <td>
+                            2000
+                        </td>
+
+                        <td>
+                            500
+                        </td>
+                        <td>
+                            200
+                        </td>
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+        <!--work progress end-->
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <!--custom chart start-->
+        <div class="border-head">
+            <section class="panel">
+                <div class="task-progress">
+                    <header class="panel-heading">
+                        <h1>  Histórico de Preço  </h1>
+                    </header>
+
+                </div>
+                <div class="panel-body text-center">
+                    <br><br>
+                    <div id="chart_div"></div>
+                </div>
+            </section>
+
+        </div>
+        <!--custom chart end-->
+    </div>
+    <div class="col-lg-5">
+
+        <div class="border-head">
+            <section class="panel">
+                <div class="task-progress">
+                    <header class="panel-heading">
+
+                        <h1> Comparativo de Preço  </h1>
+
+                    </header>
+                </div>
+                <div class="panel-body text-center">
+                    <br><br>
+                    <div id="curve_chart"></div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="border-head">
+            <section class="panel">
+                <div class="task-progress">
+                    <header class="panel-heading">
+
+                        <h1> Precificação por Zona  </h1>
+
+                    </header>
+                </div>
+                <div class="panel-body text-center">
+                    <br><br>
+                    <div id="regions_div" style="width: 95%; height: 95%;"></div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+    <div class="col-lg-5">
+
+        <div class="border-head">
+            <section class="panel">
+                <div class="task-progress">
+                    <header class="panel-heading">
+
+                        <h1> Comparativo Geral </h1>
+
+                    </header>
+                </div>
+                <div class="panel-body text-center">
+                    <br><br>
+                    <div id="curve_chart2"></div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+
+    <!--script for this page-->
+    <script src="js/sparkline-chart.js"></script>
+    <script src="js/easy-pie-chart.js"></script>
+    <script src="js/count.js"></script>
+
+    <!-- script for this page only-->
+    <script src="js/all-chartjs.js"></script>
+    <script src="assets/chart-master/Chart.js"></script>
+    <script type="text/javascript">
+      //owl carousel
+      $(document).ready(function() {
+          $("#owl-demo").owlCarousel({
+              navigation : true,
+              slideSpeed : 300,
+              paginationSpeed : 400,
+              singleItem : true,
+			  autoPlay:true
+          });
+      });
+      //custom select box
+      $(function(){
+          $('select.styled').customSelect();
+      });
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+   google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+          ['Data', 'Unilever'],
+          ['Jul/16',  5.50],
+          ['Ago/16',  7],
+          ['Set/16',  5],
+          ['Out/16',  6.80]
+        ]);
+
+      var options = {
+	          hAxis: {
+          title: 'Data'
+        },
+        vAxis: {
+          title: 'Valor'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }</script>
+
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Data', 'Unilever', 'Bunge'],
+          ['Jul/16',  5.50,      6],
+          ['Ago/16',  7,      6.50],
+          ['Set/16',  5,       5.50],
+          ['Out/16',  6.80,      6.30]
+        ]);
+
+        var options = {
+
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Data', 'Unilever', 'Bunge','Cargill', 'Vigor'],
+          ['Jul/16',  5.50,      6, 6.30, 7],
+          ['Ago/16',  7,      6.50, 5.80,6.80],
+          ['Set/16',  5,       5.50, 6, 6.90],
+          ['Out/16',  6.80,      6.30, 6.70,8]
+        ]);
+
+        var options = {
+
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart2'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('upcoming', {'packages': ['geochart']});
+     google.charts.setOnLoadCallback(drawMarkersMap);
+
+      function drawMarkersMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['País',   'Preço', 'Porcentagem'],
+        ['BR-SP',  8.30, 90],
+        ['BR-MG', 7.50, 81.32],
+        ['BR-AM',  6.00, 65.06]
+      ]);
+
+      var options = {
+	   region: 'BR',
+          resolution: 'provinces',
+        sizeAxis: { minValue: 0, maxValue: 100 },
+        region: '005', //South America
+        displayMode: 'markers',
+        colorAxis: {colors: ['#e7711c', '#4374e0']} // orange to blue
+      };
+
+	    var chart = new google.visualization.GeoChart(
+      document.getElementById('regions_div'));
+	   var geochart = new google.visualization.GeoChart(
+      document.getElementById('regions_div'));
+      var options = {
+          region: 'BR',
+          resolution: 'provinces',
+
+          colorAxis: {
+              colors: ['#acb2b9', '#2f3f4f']
+          } // orange to blue
+      };
+      chart.draw(data, options);
+      var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+      chart.draw(data, options);
+    };
+    </script>

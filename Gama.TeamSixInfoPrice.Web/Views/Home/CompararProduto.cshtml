@@ -1,0 +1,264 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+    ViewBag.Title = "CompararProduto";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Comparar Produtos
+            </header>
+            <div class="panel-body">
+
+                <!-- FORM -->
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="email">Produto:</label>
+                        <select class="form-control">
+                            <option>Todos</option>
+                            <option selected>Maionese</option>
+                            <option>Refrigerante</option>
+                            <option>Salgadinho</option>
+                            <option>Sorvete</option>
+                            <option>Sucrilhos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Marca:</label>
+                        <select class="form-control">
+                            <option>Todas</option>
+                            <option>Arisco</option>
+                            <option>Hellmann’s</option>
+                            <option>Primor</option>
+                            <option>Fifties</option>
+                            <option>Gourmet</option>
+                            <option>Heinz</option>
+                            <option>Maria</option>
+                            <option>Mesa</option>
+                            <option>Quero</option>
+                            <option>Liza</option>
+                            <option>Soya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Mercado:</label>
+                        <select class="form-control">
+                            <option>Todos</option>
+                            <option>Mecado-Pequeno</option>
+                            <option>Mercado-Medio</option>
+                            <option>Supermercado</option>
+                            <option>Hipermercado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Estado:</label>
+                        <select class="form-control">
+                            <option>Todos</option>
+                            <option>Acre</option>
+                            <option>Alagoas</option>
+                            <option>Amapá</option>
+                            <option>Amazonas</option>
+                            <option>Bahia</option>
+                            <option>Ceará</option>
+                            <option>Distrito Federal</option>
+                            <option>Espírito Santo</option>
+                            <option>Goiás</option>
+                            <option>Maranhão</option>
+                            <option>Mato Grosso</option>
+                            <option>Mato Grosso do Sul  </option>
+                            <option>Minas Gerais</option>
+                            <option>Pará</option>
+                            <option>Paraíba</option>
+                            <option>Paraná</option>
+                            <option>Pernambuco</option>
+                            <option>Piauí</option>
+                            <option>Rio de Janeiro</option>
+                            <option>Rio Grande do Norte</option>
+                            <option>Rio Grande do Sul</option>
+                            <option>Rondônia</option>
+                            <option>Roraima</option>
+                            <option>Santa Catarina</option>
+                            <option>São Paulo</option>
+                            <option>Sergipe</option>
+                            <option>Tocantins</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Cidades:</label>
+                        <select class="form-control">
+                            <option>Todas</option>
+                            <option>Rio Branco</option>
+                            <option>Maceió</option>
+                            <option>Macapá</option>
+                            <option>Manaus</option>
+                            <option>Salvador</option>
+                            <option>Fortaleza</option>
+                            <option>Brasília</option>
+                            <option>Vitória</option>
+                            <option>Goiânia</option>
+                            <option>São Luís</option>
+                            <option>Cuiabá</option>
+                            <option>Campo Grande</option>
+                            <option>Belo Horizonte</option>
+                            <option>Belém</option>
+                            <option>João Pessoa</option>
+                            <option>Curitiba</option>
+                            <option>Recife</option>
+                            <option>Teresina</option>
+                            <option>Rio de Janeiro</option>
+                            <option>Natal</option>
+                            <option>Porto Alegre</option>
+                            <option>Porto Velho</option>
+                            <option>Boa Vista</option>
+                            <option>Florianópolis</option>
+                            <option>São Paulo</option>
+                            <option>Aracaju</option>
+                            <option>Palmas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Região:</label>
+                        <select class="form-control">
+                            <option>Todas</option>
+                            <option>Norte</option>
+                            <option>Nordeste</option>
+                            <option>Centro-Oeste</option>
+                            <option>Sudeste</option>
+                            <option>Sul</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">FILTRAR</button>
+                </form>
+                <!-- TABLE -->
+                <br />
+                <div class="adv-table text-center">
+                    <table class="display table table-bordered table-striped" id="example">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Produto</th>
+                                <th class="text-center">Marca</th>
+                                <th class="text-center">Mercado %</th>
+                                <th class="text-center hidden-phone">Numero de Produtos</th>
+                                <!-- <th class="text-center hidden-phone"></th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="gradeX">
+                                <td>Maionese</td>
+                                <td>Liza</td>
+                                <td>11</td>
+                                <td class="center hidden-phone">110.000</td>
+                                <!-- <td class="center hidden-phone"></td> -->
+                            </tr>
+                            <tr class="gradeC">
+                                <td>Maionese</td>
+                                <td>Arisco</td>
+                                <td>6</td>
+                                <td class="center hidden-phone">60.000</td>
+                                <!-- <td class="center hidden-phone"></td> -->
+                            </tr>
+                            <tr class="gradeA">
+                                <td>Maionese</td>
+                                <td>Hellmann’s</td>
+                                <td>25</td>
+                                <td class="center hidden-phone">250.000</td>
+                                <!-- <td class="center hidden-phone"></td> -->
+                            </tr>
+                            <tr class="gradeA">
+                                <td>Maionese</td>
+                                <td>Primor</td>
+                                <td>5</td>
+                                <td class="center hidden-phone">50.000</td>
+                                <!-- <td class="center hidden-phone"></td> -->
+                            </tr>
+                            <tr class="gradeA">
+                                <td>Maionese</td>
+                                <td>Soya</td>
+                                <td>7</td>
+                                <td class="center hidden-phone">70.000</td>
+                                <!-- <td class="center hidden-phone"></td> -->
+                            </tr>
+                            <tr class="gradeA">
+                                <td>Maionese</td>
+                                <td>Fifties</td>
+                                <td>3</td>
+                                <td class="center hidden-phone">30.000</td>
+                                <!-- <td class="center hidden-phone"></td> -->
+                            </tr>
+                            <tr class="gradeA">
+                                <td>Maionese</td>
+                                <td>Gourmet</td>
+                                <td>7</td>
+                                <td class="center hidden-phone">70.000</td>
+                                <!-- <td class="center hidden-phone">A</td> -->
+                            </tr>
+                            <tr class="gradeA">
+                                <td>Maionese</td>
+                                <td>Heinz</td>
+                                <td>20</td>
+                                <td class="center hidden-phone">200.000</td>
+                                <!-- <td class="center hidden-phone">A</td> -->
+                            </tr>
+                            <tr class="gradeA">
+                                <td>Maionese</td>
+                                <td>Maria</td>
+                                <td>2</td>
+                                <td class="center hidden-phone">20.000</td>
+                                <!-- <td class="center hidden-phone">A</td> -->
+                            </tr>
+                            <tr class="gradeA">
+                                <td>Maionese</td>
+                                <td>Mesa</td>
+                                <td>4</td>
+                                <td class="center hidden-phone">40.000</td>
+                                <!-- <td class="center hidden-phone">A</td> -->
+                            </tr>
+                            <tr class="gradeA">
+                                <td>Maionese</td>
+                                <td>Quero</td>
+                                <td>6</td>
+                                <td class="center hidden-phone">40.000</td>
+                                <!-- <td class="center hidden-phone">A</td> -->
+                            </tr>
+                            <tr class="gradeU">
+                                <td>Maionese</td>
+                                <td>Outras</td>
+                                <td>6</td>
+                                <td class="center hidden-phone">60.000</td>
+                                <!-- <td class="center hidden-phone">U</td> -->
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th class="text-center">Maionese</th>
+                                <th class="text-center">Total de Marcas: 12</th>
+                                <th class="text-center">Total 100%</th>
+                                <th class="text-center hidden-phone">Total de Produtos: 1.000.000,00</th>
+                                <!-- <th class="text-center hidden-phone">CSS grade</th> -->
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<link href="~/Content/assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
+<link href="~/Content/assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
+
+<script type="text/javascript" charset="utf-8">
+          $(document).ready(function() {
+              $('#example').dataTable( {
+                  "aaSorting": [[ 4, "desc" ]]
+              } );
+          } );
+</script>
+
+    <!--script for this page only-->
+<script type="text/javascript" language="javascript" src="~/Content/assets/advanced-datatable/media/js/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="~/Content/assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="~/Content/assets/data-tables/DT_bootstrap.js"></script>
+

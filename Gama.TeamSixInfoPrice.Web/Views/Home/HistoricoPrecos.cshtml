@@ -1,0 +1,226 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+    ViewBag.Title = "Historico de Precos";
+}
+
+
+
+
+
+<!-- page start-->
+<!-- FORM -->
+<div class="row text-center">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="email">Produto:</label>
+            <select class="form-control">
+                <option>Todos</option>
+                <option>Maionese</option>
+                <option selected>Refrigerante - 600ML</option>
+                <option>Salgadinho</option>
+                <option>Sorvete</option>
+                <option>Sucrilhos</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Marca:</label>
+            <select class="form-control">
+                <option>Todas</option>
+                <option>Arisco</option>
+                <option selected>Coca-Cola</option>
+                <option>Hellmann’s</option>
+                <option>Primor</option>
+                <option>Fifties</option>
+                <option>Gourmet</option>
+                <option>Heinz</option>
+                <option>Maria</option>
+                <option>Mesa</option>
+                <option>Quero</option>
+                <option>Liza</option>
+                <option>Soya</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Mercado:</label>
+            <select class="form-control">
+                <option>Todos</option>
+                <option selected>Mecado-Pequeno</option>
+                <option>Mercado-Medio</option>
+                <option>Supermercado</option>
+                <option>Hipermercado</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Estado:</label>
+            <select class="form-control">
+                <option>Todos</option>
+                <option>Acre</option>
+                <option>Alagoas</option>
+                <option>Amapá</option>
+                <option>Amazonas</option>
+                <option>Bahia</option>
+                <option>Ceará</option>
+                <option>Distrito Federal</option>
+                <option>Espírito Santo</option>
+                <option>Goiás</option>
+                <option>Maranhão</option>
+                <option>Mato Grosso</option>
+                <option>Mato Grosso do Sul  </option>
+                <option>Minas Gerais</option>
+                <option>Pará</option>
+                <option>Paraíba</option>
+                <option>Paraná</option>
+                <option>Pernambuco</option>
+                <option>Piauí</option>
+                <option>Rio de Janeiro</option>
+                <option>Rio Grande do Norte</option>
+                <option>Rio Grande do Sul</option>
+                <option>Rondônia</option>
+                <option>Roraima</option>
+                <option>Santa Catarina</option>
+                <option selected>São Paulo</option>
+                <option>Sergipe</option>
+                <option>Tocantins</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Cidades:</label>
+            <select class="form-control">
+                <option>Todas</option>
+                <option>Rio Branco</option>
+                <option>Maceió</option>
+                <option>Macapá</option>
+                <option>Manaus</option>
+                <option>Salvador</option>
+                <option>Fortaleza</option>
+                <option>Brasília</option>
+                <option>Vitória</option>
+                <option>Goiânia</option>
+                <option>São Luís</option>
+                <option>Cuiabá</option>
+                <option>Campo Grande</option>
+                <option>Belo Horizonte</option>
+                <option>Belém</option>
+                <option>João Pessoa</option>
+                <option>Curitiba</option>
+                <option>Recife</option>
+                <option>Teresina</option>
+                <option>Rio de Janeiro</option>
+                <option>Natal</option>
+                <option>Porto Alegre</option>
+                <option>Porto Velho</option>
+                <option>Boa Vista</option>
+                <option>Florianópolis</option>
+                <option selected>São Paulo</option>
+                <option>Aracaju</option>
+                <option>Palmas</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Região:</label>
+            <select class="form-control">
+                <option>Todas</option>
+                <option>Norte</option>
+                <option>Nordeste</option>
+                <option>Centro-Oeste</option>
+                <option>Sudeste</option>
+                <option selected>Sul</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">FILTRAR</button>
+    </form>
+</div>
+<div class="row">
+    <div class="box">
+
+        <h1>Histórico de Preços - Coca-Cola</h1>
+        <div class="box-chart">
+            <canvas id="GraficoLine" style="width:100%;"></canvas>
+            <script type="text/javascript">
+
+                  var options = {
+                    responsive:true
+                  };
+
+                  var data = {
+                    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+                    datasets: [
+                  // {
+                  //   label: "Dados primários",
+                  //   fillColor: "rgba(220,220,220,0.2)",
+                  //   strokeColor: "rgba(220,220,220,1)",
+                  //   pointColor: "rgba(220,220,220,1)",
+                  //   pointStrokeColor: "#fff",
+                  //   pointHighlightFill: "#fff",
+                  //   pointHighlightStroke: "rgba(220,220,220,1)",
+                  //   data: [randomnb(), randomnb(), randomnb(), randomnb(), randomnb(), randomnb(), randomnb(), randomnb(), randomnb(), randomnb(), randomnb(), randomnb()]
+                  // },
+                  {
+                    label: "Dados secundários",
+                    fillColor: "rgba(151,187,205,0.2)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [5.00, 6.50, 6.50, 6.50, 5.50, 5.90, 6.00, 6.50, 6.70, 7.00, 4.60, 5.00]
+                  }
+                  ]
+                };
+
+                window.onload = function(){
+
+                  var ctx = document.getElementById("GraficoLine").getContext("2d");
+                  var LineChart = new Chart(ctx).Line(data, options);
+                }
+            </script>
+        </div>
+        <div class="row">
+            <h2 class="estatisticas">Estatísticas:</h2>
+            <h3 class="azul">Preço Sugerido: R$5.00 </h3>
+            <h3 class="verde">Menor Preço Registrado: R$4.60 </h3>
+            <h3 class="verde">Estabelecimento com menor preço registrado: Loja do Carlos </h3>
+            <h3 class="verde">Data do menor preço registrado: Novembro </h3>
+            <h3 class="vermelho">Maior Preço Registrado: R$7.00</h3>
+            <h3 class="vermelho">Estabelecimento com maior preço registrado: Loja do João </h3>
+            <h3 class="vermelho">Data do meno preço registrado: Outubro </h3>
+        </div>
+        <style type="text/css">
+            * {
+                font-family: calibri;
+            }
+
+            .box {
+                margin: 0px auto;
+                width: 70%;
+            }
+
+            .box-chart {
+                width: 100%;
+                margin: 0 auto;
+                padding: 10px;
+            }
+
+            .estatisticas {
+                text-decoration: underline;
+            }
+
+            .azul {
+                color: blue;
+            }
+
+            .verde {
+                color: green;
+            }
+
+            .vermelho {
+                color: red;
+            }
+        </style>
+        <script type="text/javascript">
+    var randomnb = function(){ return Math.round(Math.random()*300)};
+        </script>
+        <!-- script for this page only-->
+        <script src="~/scripts/js/all-chartjs.js"></script>
+        <script src="~/scripts/js/Chart.min.js"></script>
