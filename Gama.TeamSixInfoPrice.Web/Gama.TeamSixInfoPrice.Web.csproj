@@ -167,6 +167,8 @@
     <Content Include="scripts\js\dynamic-table.js" />
     <Content Include="scripts\js\easy-pie-chart.js" />
     <Content Include="scripts\js\editable-table.js" />
+    <Content Include="scripts\js\excanvas.js" />
+    <Content Include="scripts\js\excanvas.min.js" />
     <Content Include="scripts\js\external-dragging-calendar.js" />
     <Content Include="scripts\js\flot-chart.js" />
     <Content Include="scripts\js\form-component.js" />
@@ -185,6 +187,7 @@
     <Content Include="scripts\js\jquery.dcjqaccordion.2.7.js" />
     <Content Include="scripts\js\jquery.dcjqaccordion.2.7.min.js" />
     <Content Include="scripts\js\jquery.flot.js" />
+    <Content Include="scripts\js\jquery.flot.min.js" />
     <Content Include="scripts\js\jquery.js" />
     <Content Include="scripts\js\jquery.nicescroll.js" />
     <Content Include="scripts\js\jquery.pulsate.min.js" />
@@ -208,7 +211,9 @@
     <Content Include="scripts\js\toucheffects.js" />
     <Content Include="scripts\js\tree.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Shared\_Dashboard.cshtml" />
     <Content Include="Views\Home\Sortimento.cshtml" />
